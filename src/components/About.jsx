@@ -32,7 +32,7 @@ export default function About() {
 			</p>
 			<br />
 			<p className="text-2xl text-left">
-				Mientras no codeo, disfruto mi tiempo hablando con amigos, salir
+				Mientras no trabajando, disfruto mi tiempo hablando con amigos, salir
 				a ver a mi familia, disfrutar tiempo con mi pareja, leer algo
 				nuevo, o empezar algun proyecto. Aunque en este momento me
 				encuentre dedicado a mi carrera son cosas que nunca dejare de
