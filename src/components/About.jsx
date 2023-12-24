@@ -35,7 +35,7 @@ export default function About() {
 				Mientras no trabajando, disfruto mi tiempo hablando con amigos, salir
 				a ver a mi familia, disfrutar tiempo con mi pareja, leer algo
 				nuevo, o empezar algun proyecto. Aunque en este momento me
-				encuentre dedicado a mi carrera son cosas que nunca dejare de
+				encuentre dedicado a mi carrera son cosas que nunca dejaré de
 				hacer.
 			</p>
 		</section>
