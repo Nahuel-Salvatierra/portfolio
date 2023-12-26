@@ -1,4 +1,3 @@
-
 import React from "react";
 import SectionHeading from "./Section.Heading";
 import { useSectionInView } from "./../lib/hooks";
@@ -23,19 +22,18 @@ export default function About() {
 			</p>
 			<br />
 			<p className="text-2xl text-left">
-				Siempre me encuentro con la necesidad de aprender técnicas
-				nuevas, el{" "}
-				<span className="font-bold">aprendizaje constante</span> para
-				ser independiente es algo que se requiere y no esta escrito.
-				Tengo una <span className="font-bold">actitud proactiva</span> y
-				me gusta el saber en general.
+				Frecuentemente me veo en la necesidad de aprender nuevas
+				técnicas; el aprendizaje constante para ser independiente es
+				esencial, aunque no esté explícito. Mantengo una{" "}
+				<span className="font-bold">actitud dinámica</span> y tengo un
+				gran interés en el conocimiento en general.
 			</p>
 			<br />
 			<p className="text-2xl text-left">
-				Mientras no trabajando, disfruto mi tiempo hablando con amigos, salir
-				a ver a mi familia, disfrutar tiempo con mi pareja, leer algo
-				nuevo, o empezar algun proyecto. Aunque en este momento me
-				encuentre dedicado a mi carrera son cosas que nunca dejare de
+				Mientras no estoy trabajando, disfruto mi tiempo hablando con
+				amigos, ver a mi familia, pasar tiempo con mi pareja, leer algo
+				nuevo, o empezar algún proyecto. Aunque en este momento me
+				encuentre dedicado a mi carrera, son cosas que nunca dejare de
 				hacer.
 			</p>
 		</section>
