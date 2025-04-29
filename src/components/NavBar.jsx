@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { links } from "../lib/data";
 import clsx from "clsx";
 import { useActiveSectionContext } from "../context/activeSectionProvider";
