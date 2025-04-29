@@ -9,23 +9,21 @@ import Skills from "./components/Skills";
 import ThemeSwitch from "./components/ThemeSwitch";
 import ThemeContextProvider from "./context/ThemeContextProvider";
 import About from "./components/About";
-import Contact from "./components/Contact";
 
 function App() {
 	return (
 		<BrowserRouter>
-		<ThemeContextProvider>
-			<ActiveSectionContextProvider>
-				<Layout>
-					<NavBar />
-					<Intro/>
-					<Projects/>
-					<Skills/>
-					<About/>
-					<Contact/>
-					<ThemeSwitch/>
-				</Layout>
-			</ActiveSectionContextProvider>
+			<ThemeContextProvider>
+				<ActiveSectionContextProvider>
+					<Layout>
+						<NavBar />
+						<Intro />
+						<Projects />
+						<Skills />
+						<About />
+						<ThemeSwitch />
+					</Layout>
+				</ActiveSectionContextProvider>
 			</ThemeContextProvider>
 		</BrowserRouter>
 	);
