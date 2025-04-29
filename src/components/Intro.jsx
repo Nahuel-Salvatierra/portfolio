@@ -1,10 +1,9 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 import photoProfile from "./../assets/photoProfile.png";
 import { useSectionInView } from "../lib/hooks";
 import { useActiveSectionContext } from "../context/activeSectionProvider";
@@ -14,10 +13,14 @@ export default function Intro() {
 	const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
 	return (
-		<section
+		<motion.section
 			ref={ref}
 			id="home"
 			className="mb-28 px-5 sm:px-10 md:px-20 lg:px-44 xl:px-96 2xl:px-[30rem] text-center sm:mb-20 scroll-mt-[100rem] justify-center w-full"
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.8 }}
+			viewport={{ once: true }}
 		>
 			<div className="flex items-center justify-center">
 				<div className="static">
@@ -56,7 +59,7 @@ export default function Intro() {
 				<a
 					className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
 					href="./Cv-Nahuel-DesarrolladorWeb.pdf"
-					download='Cv-Nahuel-DesarrolladorWeb.pdf'
+					download="Cv-Nahuel-DesarrolladorWeb.pdf"
 				>
 					Descargar CV{" "}
 					<HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
@@ -79,6 +82,6 @@ export default function Intro() {
 					</a>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 }
