@@ -8,7 +8,7 @@ export default function About() {
 	return (
 		<motion.section
 			ref={ref}
-			className="mb-28 px-4 lg:px-32 xl:px-80 text-center 2xl:px-[30rem] sm:px-10  md:px-20 leading-8 sm:mb-40 scroll-mt-28 flex flex-wrap justify-center flex-col items-center"
+			className="px-4 pb-10 lg:px-32 xl:px-80 text-center 2xl:px-[30rem] sm:px-10  md:px-20 leading-8 sm:pb-20 scroll-mt-28 flex flex-wrap justify-center flex-col items-center"
 			id="about"
 			initial={{ opacity: 0, y: 50 }}
 			whileInView={{ opacity: 1, y: 0 }}

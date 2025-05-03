@@ -10,7 +10,7 @@ export default function Skills() {
 		<motion.section
 			id="skills"
 			ref={ref}
-			className="mb-10 px-2 scroll-mt-28 text-center 2xl:px-[10rem] sm:px-10 sm:mb-24 md:px-20 flex w-full flex-col"
+			className="pb-10 px-2 scroll-mt-28 text-center 2xl:px-[10rem] sm:px-10 sm:pb-24 md:px-20 flex w-full flex-col"
 			initial={{ opacity: 0, y: 50 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8 }}
