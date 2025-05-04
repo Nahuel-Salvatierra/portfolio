@@ -13,7 +13,7 @@ export default function Intro() {
 		<motion.section
 			ref={ref}
 			id="home"
-			className="pb-10 pt-20 px-5 sm:px-10 md:px-20 lg:px-44 xl:px-96 2xl:px-[30rem] text-center sm:pb-20 scroll-mt-[100rem] justify-center w-full"
+			className="pb-10 pt-20 px-5 sm:px-10 sm:pt-24 md:px-20 lg:px-44 xl:px-96 2xl:px-[30rem] text-center sm:pb-20 scroll-mt-[100rem] justify-center w-full"
 			initial={{ opacity: 0, y: 0 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8 }}
