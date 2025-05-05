@@ -1,6 +1,7 @@
 import mockupColormeMakeup from "./../assets/mockup-colorme-makeup.png";
 import libreando from "./../assets/libreando.jpg";
 import animarte from "./../assets/animarte.png";
+import { link } from "motion/react-client";
 export const links = [
 	{
 		name: "Inicio",
@@ -64,6 +65,7 @@ export const projectsData = [
 			"Un portfolio profesional. En este trabajo se muestra material artístico, sin perder la oportunidad de interactuar con la persona directamente por los medios de comunicación brindados. ",
 		tags: ["HTTP", "Bootstrap", "JavaScript"],
 		imageUrl: mockupColormeMakeup,
+		link: "https://colorme.animarte.website",
 	},
 	{
 		title: "Equipo LibreAndo",
