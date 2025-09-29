@@ -1,4 +1,3 @@
-import React from "react";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
@@ -24,7 +23,7 @@ export default function Intro() {
 					<div>
 						<img
 							src={photoProfile}
-							alt="Ricardo portrait"
+							alt="Nahuel Salvatierra"
 							className="h-40 w-40 md:w-44 md:h-44 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
 						/>
 					</div>

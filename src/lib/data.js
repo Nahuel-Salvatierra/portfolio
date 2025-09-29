@@ -1,7 +1,7 @@
 import mockupColormeMakeup from "./../assets/mockup-colorme-makeup.png";
 import libreando from "./../assets/libreando.jpg";
 import animarte from "./../assets/animarte.png";
-import { link } from "motion/react-client";
+
 export const links = [
 	{
 		name: "Inicio",

@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.animate-scroll {
+	animation: scroll 40s linear infinite;
+}
+
+.animate-scroll-reverse {
+	animation: scroll 40s linear infinite reverse;
+}
+
+:root {
+	--primary-1: oklch(98.4% 0.003 247.858);
+	--primary-2: oklch(96.8% 0.007 247.896);
+	--primary-3: oklch(92.9% 0.013 255.508);
+	--primary-4: oklch(70.4% 0.04 256.788);
+
+	--secondary-1: oklch(70% 0.04 220);
+	--secondary-2: oklch(75% 0.035 220);
+}
+
+.dark {
+	--primary-1: oklch(12.9% 0.042 264.695);
+	--primary-2: oklch(20.8% 0.042 265.755);
+	--primary-3: oklch(27.9% 0.041 260.031);
+	--primary-4: oklch(70.4% 0.191 22.216);
+
+	--secondary-1: oklch(37.2% 0.044 257.287);
+	--secondary-2: oklch(44.6% 0.043 257.281);
+}
+
+body {
+	background: linear-gradient(
+		-45deg,
+		var(--primary-1),
+		var(--primary-2),
+		var(--primary-3),
+		var(--primary-4)
+	);
+	background-size: 200% 100%;
+	animation: gradient 15s ease infinite;
+	height: min-content;
+}
+/* 
+.bg-body {
+	background: linear-gradient(
+		-45deg,
+		transparent,
+		var(--primary-1) 50%,
+		var(--secondary-1) 52%,
+		var(--secondary-2) 52%,
+		var(--primary-2) 53%,
+		transparent
+	);
+	background-size: 300% 100%;
+	animation: gradient-body 15s ease infinite;
+	height: min-content;
+} */
+
+main {
+	position: relative;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0 50%;
+	}
+}
+
+@keyframes gradient-body {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

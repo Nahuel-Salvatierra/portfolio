@@ -1,10 +1,27 @@
-import React from "react";
 import SectionHeading from "./Section.Heading";
 import { skillsData } from "./../lib/data";
 import { useSectionInView } from "./../lib/hooks";
 import { motion } from "framer-motion";
+import { useMemo } from "react";
+
 export default function Skills() {
 	const { ref } = useSectionInView("Skills");
+
+	const skillsPairsAndOdds = useMemo(
+		() =>
+			skillsData.reduce(
+				(acc, skill, index) => {
+					if (index % 2 === 0) {
+						acc.pair.push(skill);
+					} else {
+						acc.odds.push(skill);
+					}
+					return acc;
+				},
+				{ pair: [], odds: [] }
+			),
+		[]
+	);
 
 	return (
 		<motion.section
@@ -17,17 +34,44 @@ export default function Skills() {
 			viewport={{ once: true }}
 		>
 			<SectionHeading className="">Stack Tecnológico</SectionHeading>
-			<ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 lg:px-36 xl:px-56 2xl:px-96">
-				{skillsData.map((skill, index) => (
-					<li
-						className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
-						key={index}
-						custom={index}
-					>
-						{skill}
-					</li>
-				))}
-			</ul>
+			<div className="skills-container space-y-4 w-full overflow-hidden">
+				<div className="skills-wrapper flex w-max animate-scroll">
+					{skillsPairsAndOdds.pair.map((skill, index) => (
+						<div
+							className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10  text-lg text-gray-800 dark:text-white/80 mx-2 whitespace-nowrap"
+							key={index}
+						>
+							{skill}
+						</div>
+					))}
+					{skillsPairsAndOdds.odds.map((skill, index) => (
+						<div
+							className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 text-lg text-gray-800 dark:text-white/80 mx-2 whitespace-nowrap"
+							key={`duplicate-${index}`}
+						>
+							{skill}
+						</div>
+					))}
+				</div>
+				<div className="skills-wrapper flex w-max animate-scroll-reverse">
+					{skillsPairsAndOdds.odds.map((skill, index) => (
+						<div
+							className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 text-lg text-gray-800 dark:text-white/80 mx-2 whitespace-nowrap"
+							key={`duplicate-${index}`}
+						>
+							{skill}
+						</div>
+					))}
+					{skillsPairsAndOdds.pair.map((skill, index) => (
+						<div
+							className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 text-lg text-gray-800 dark:text-white/80 mx-2 whitespace-nowrap"
+							key={`duplicate-${index}`}
+						>
+							{skill}
+						</div>
+					))}
+				</div>
+			</div>
 		</motion.section>
 	);
 }
