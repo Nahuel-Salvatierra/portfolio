@@ -34,7 +34,7 @@ export default function Intro() {
 				<span className="font-normal">NAHUEL S.</span>
 				<br />{" "}
 				<span className="font-bold py-20">
-					Desarrollador web
+					Ingeniero de software
 					<br />
 					Full Stack
 				</span>

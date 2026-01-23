@@ -58,6 +58,7 @@ export const projectsData = [
 		tags: ["Next.js", "Google API", "CI/CD", "Docker", "Typescript"],
 		imageUrl: animarte,
 		link: "https://animarte.website/",
+		github: "https://github.com/Nahuel-Salvatierra/animarte",
 	},
 	{
 		title: "Colorme-Makeup",
@@ -66,6 +67,7 @@ export const projectsData = [
 		tags: ["HTTP", "Bootstrap", "JavaScript"],
 		imageUrl: mockupColormeMakeup,
 		link: "https://colorme.animarte.website",
+		github: "",
 	},
 	{
 		title: "Equipo LibreAndo",
@@ -74,5 +76,6 @@ export const projectsData = [
 		tags: ["React", "CSS", "Bootstrap", "React-Router-DOM"],
 		imageUrl: libreando,
 		link: "https://libreando.ar/",
+		github: "",
 	},
 ];
