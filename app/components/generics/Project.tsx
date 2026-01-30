@@ -1,11 +1,11 @@
 import { FaGithub } from "react-icons/fa";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 export interface ProjectProps {
   title: string;
   description: string;
   tags: string[];
-  imageUrl: string;
+  imageUrl: StaticImageData;
   link: string;
   github: string;
 }

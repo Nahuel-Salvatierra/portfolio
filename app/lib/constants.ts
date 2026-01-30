@@ -1,4 +1,7 @@
 import { SectionName } from "../context/useSectionInView";
+import animarte from "../images/animarte.png";
+import mockupColormeMakeup from "../images/mockup-colorme-makeup.png";
+import libreando from "../images/libreando.jpg";
 
 export const links = [
   {
@@ -54,7 +57,7 @@ export const projectsData = [
     description:
       "Una pagina web para gestionar los pedidos de los clientes, tener un seguimiento automatizado de los mismos y poder ver el estado de cada uno. ",
     tags: ["Next.js", "Google API", "CI/CD", "Docker", "Typescript"],
-    imageUrl: "/animarte.png",
+    imageUrl: animarte,
     link: "https://animarte.website/",
     github: "https://github.com/Nahuel-Salvatierra/animarte",
   },
@@ -63,7 +66,7 @@ export const projectsData = [
     description:
       "Un portfolio profesional. En este trabajo se muestra material artístico, sin perder la oportunidad de interactuar con la persona directamente por los medios de comunicación brindados. ",
     tags: ["HTTP", "Bootstrap", "JavaScript"],
-    imageUrl: "/mockup-colorme-makeup.png",
+    imageUrl: mockupColormeMakeup,
     link: "https://colorme.animarte.website",
     github: "",
   },
@@ -72,7 +75,7 @@ export const projectsData = [
     description:
       "Esta página web fué un salto a nuevas tecnologías. Usando React aprendí a manipular estados y efectos, la web muestra el basto conocimiento de los profesionales y su calidad de atención. ",
     tags: ["React", "CSS", "Bootstrap", "React-Router-DOM"],
-    imageUrl: "/libreando.jpg",
+    imageUrl: libreando,
     link: "https://libreando.ar/",
     github: "",
   },
