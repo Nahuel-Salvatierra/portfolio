@@ -1,7 +1,7 @@
 "use client";
 
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
+import { HiMail } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Spline from "@splinetool/react-spline";
@@ -41,9 +41,10 @@ export default function Intro() {
             >
               Ingeniero de software
               <br />
-              <span className="text-[#1A73E8] dark:text-[#4285F4]">
+              <span className="text-[#1A73E8]">
                 Full Stack
               </span>
+
             </motion.h1>
             <motion.p
               className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed pointer-events-none"
@@ -68,7 +69,7 @@ export default function Intro() {
                 onClick={() => setOpen(true)}
               >
                 <span className="relative z-10">Contacto</span>
-                <BsArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" />
+                <BsArrowRight className="relative z-10 group-hover:scale-110 transition-transform duration-300" />
               </button>
               <a
                 className="btn-secondary-3d group relative flex items-center justify-center gap-2 text-base md:text-lg"
@@ -77,7 +78,7 @@ export default function Intro() {
                 rel="noopener noreferrer"
               >
                 <span className="relative z-10">Enviar email</span>
-                <HiDownload className="relative z-10 group-hover:translate-y-1 transition-transform" />
+                <HiMail className="relative z-10 group-hover:scale-110 transition-transform duration-300" />
               </a>
             </motion.div>
             <motion.div
@@ -93,7 +94,7 @@ export default function Intro() {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <BsLinkedin className={`text-xl w-10 h-10 ${onHover}`} />
+                <BsLinkedin className={`text-xl w-10 h-10 text-white ${onHover}`} />
               </a>
               <a
                 className=""
@@ -102,7 +103,7 @@ export default function Intro() {
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <FaGithubSquare className={`text-xl w-11 h-11 ${onHover}`} />
+                <FaGithubSquare className={`text-xl w-11 h-11 text-white ${onHover}`} />
               </a>
             </motion.div>
           </div>

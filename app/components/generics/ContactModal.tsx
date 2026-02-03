@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { InputForm } from "./InputForm";
 import { Dialog } from "./Dialog";
 
@@ -15,7 +16,16 @@ export default function ContactModal({
 }: ContactModalProps) {
   return (
     <Dialog open={open} toggleOpenClose={toggleOpenClose}>
-      <div
+      <motion.div
+        key="contact-modal-content"
+        initial={{ opacity: 0, scale: 0.92, y: 12 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.96, y: 8 }}
+        transition={{
+          type: "spring",
+          damping: 26,
+          stiffness: 300,
+        }}
         onClick={(e) => e.stopPropagation()}
         className="lg:w-1/2 w-full h-1/2 bg-black text-white flex flex-col items-center justify-center border border-gray-300 rounded-xl p-10"
       >
@@ -27,6 +37,7 @@ export default function ContactModal({
           <InputForm type="email" className="col-span-1" placeholder="Email" />
           <div className="col-span-2">
             <textarea
+              defaultValue={"Hola, me interesa tu trabajo. Me gustaría saber más sobre tus proyectos."}
               className="w-full p-2 rounded-md border border-gray-300"
               placeholder="Mensaje"
             />
@@ -38,7 +49,7 @@ export default function ContactModal({
             Enviar
           </button>
         </form>
-      </div>
+      </motion.div>
     </Dialog>
   );
 }

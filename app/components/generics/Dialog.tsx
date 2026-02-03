@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 type DialogProps = {
   open: boolean;
@@ -10,18 +11,23 @@ type DialogProps = {
 
 export function Dialog({ open, children, toggleOpenClose }: DialogProps) {
   return (
-    <>
+    <AnimatePresence>
       {open && (
-        <div
+        <motion.div
+          key="dialog-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
           onClick={() => toggleOpenClose()}
           style={{
             zIndex: 90,
           }}
-          className="w-full h-full  bg-opacity-50 backdrop-blur-xs absolute top-0 left-0 flex items-center justify-center p-4"
+          className="w-full h-full bg-black/50 backdrop-blur-sm absolute top-0 left-0 flex items-center justify-center p-4"
         >
           {children}
-        </div>
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   );
 }

@@ -1,0 +1,83 @@
+.neon-water {
+    font-family: inherit;
+    font-weight: inherit;
+    display: inline-block;
+
+    /* Gradiente base */
+    background: linear-gradient(120deg,
+            #00e5ff 0%,
+            #00aaff 50%,
+            #0077dd 100%);
+    background-size: 300% 300%;
+
+    /* Gradiente aplicado al texto */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    /* Glow neon */
+    text-shadow:
+        0 0 6px rgba(0, 229, 255, 0.9),
+        0 0 12px rgba(0, 170, 255, 0.8),
+        0 0 24px rgba(0, 119, 221, 0.7),
+        0 0 48px rgba(0, 119, 221, 0.5);
+
+    filter:
+        drop-shadow(0 0 8px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 20px rgba(0, 170, 255, 0.5));
+
+    animation:
+        gradient-flow 6s ease-in-out infinite,
+        neon-flicker 7.5s linear infinite;
+
+    will-change: background-position, filter, text-shadow;
+}
+
+/* Flujo tipo agua */
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Variación orgánica del brillo */
+@keyframes neon-flicker {
+    0% {
+        filter: brightness(1) blur(0px);
+    }
+
+    14% {
+        filter: brightness(1.15) blur(0.3px);
+    }
+
+    27% {
+        filter: brightness(0.95) blur(0px);
+    }
+
+    41% {
+        filter: brightness(1.25) blur(0.5px);
+    }
+
+    58% {
+        filter: brightness(1.05) blur(0.2px);
+    }
+
+    73% {
+        filter: brightness(1.3) blur(0.6px);
+    }
+
+    89% {
+        filter: brightness(0.9) blur(0px);
+    }
+
+    100% {
+        filter: brightness(1) blur(0px);
+    }
+}
