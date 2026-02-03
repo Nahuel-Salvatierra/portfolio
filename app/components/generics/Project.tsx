@@ -1,11 +1,16 @@
-import { FaGithub } from "react-icons/fa";
+"use client";
+
+import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
+import { FaGithub, FaPlay, FaExternalLinkAlt } from "react-icons/fa";
+import { Dialog } from "./Dialog";
 
 export interface ProjectProps {
   title: string;
   description: string;
   tags: string[];
-  imageUrl: StaticImageData;
+  imageUrl: StaticImageData | string;
+  videoUrl?: string;
   link: string;
   github: string;
 }
@@ -15,75 +20,132 @@ export default function Project({
   description,
   tags,
   imageUrl,
+  videoUrl,
   link,
   github,
 }: ProjectProps) {
-  return (
-    <div className="group relative mb-3 sm:mb-8 last:mb-0 overflow-visible transition-transform duration-200 hover:scale-[1.02] origin-center">
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
-        <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 text-white bg-white/10 hover:bg-white/20 group-odd:group-hover:rounded-tl-none group-odd:group-hover:rounded-bl-none group-even:group-hover:rounded-tr-none group-even:group-hover:rounded-br-none">
-          <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-            <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-              {description}
-            </p>
-            <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-              {tags.map((tag, index) => (
-                <li
-                  className="bg-black/[0.7] px-3 py-1 text-[.8rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                  key={index}
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-          </div>
+  const [isOpen, setIsOpen] = useState(false);
 
-          <Image
-            src={imageUrl}
-            alt={title}
-            width={1000}
-            height={1000}
-            className="absolute hidden sm:block top-8 -right-36 w-[28.25rem] rounded-t-lg shadow-2xl
-        						transition bg-inherit
-        						group-hover:scale-[1.04]
-        						group-hover:-translate-x-3
-       							group-hover:translate-y-3
-        						group-hover:-rotate-2
-								group-even:group-hover:translate-x-3
-        						group-even:group-hover:translate-y-3
-        						group-even:group-hover:rotate-2
-        						group-even:right-[initial] group-even:-left-40"
-          />
-        </section>
-      </a>
-      <div
-        className={`absolute top-0 bottom-0 z-20 w-12 sm:w-14 flex items-center justify-center bg-gray-300 dark:bg-white/20 text-gray-700 dark:text-white opacity-0 group-hover:opacity-100 transition-[transform,opacity] duration-200 ease-out pointer-events-none group-hover:pointer-events-auto
-					group-odd:left-0 group-odd:right-auto group-odd:rounded-l-lg group-odd:translate-x-0 group-odd:group-hover:-translate-x-full
-					group-even:right-0 group-even:left-auto group-even:rounded-r-lg group-even:translate-x-0 group-even:group-hover:translate-x-full
-					${github ? "hover:bg-gray-400 dark:hover:bg-white/30" : ""}`}
-        aria-hidden={!github}
-      >
-        {github ? (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute inset-0 flex items-center justify-center"
-            aria-label="Ver en GitHub"
-            title="Ver repositorio"
-          >
-            <FaGithub className="w-6 h-6" />
-          </a>
-        ) : (
-          <FaGithub className="w-6 h-6 opacity-60" />
-        )}
+  const handleOpen = (e: React.MouseEvent) => {
+    if (videoUrl) {
+      e.preventDefault();
+      setIsOpen(true);
+    }
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      <div className="group relative mb-3 sm:mb-8 last:mb-0 w-full max-w-[50rem] mx-auto origin-center">
+        <div className="relative overflow-hidden rounded-2xl bg-black/40 border border-white/10 shadow-[0_0_15px_rgba(0,123,255,0.1)] hover:shadow-[0_0_30px_rgba(0,123,255,0.2)] hover:border-white/20 transition-all duration-300 backdrop-blur-sm">
+          {/* Top Gradient Line */}
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+
+          <div className="flex flex-col md:flex-row">
+            {/* Content Section */}
+            <div className="p-6 md:w-1/2 flex flex-col justify-between z-10">
+              <div>
+                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                  {title}
+                </h3>
+                <p className="mt-4 leading-relaxed text-gray-300 text-sm">
+                  {description}
+                </p>
+                <div className="flex gap-4 mt-6">
+                  {github && (
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-medium text-white/70 hover:text-cyan-400 transition-colors"
+                    >
+                      <FaGithub className="w-5 h-5" /> Code
+                    </a>
+                  )}
+                  {link && (
+                    <a
+                      href={link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-medium text-white/70 hover:text-cyan-400 transition-colors"
+                    >
+                      <FaExternalLinkAlt className="w-4 h-4" /> Ir al sitio
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <ul className="flex flex-wrap gap-2 mt-6">
+                {tags.map((tag, index) => (
+                  <li
+                    className="px-3 py-1 text-[0.7rem] uppercase tracking-wider text-cyan-200 bg-cyan-900/20 border border-cyan-500/20 rounded-full"
+                    key={index}
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Image/Media Section */}
+            <div className="md:w-[%60] relative bg-black aspect-video md:aspect-auto overflow-hidden">
+              {videoUrl ? (
+                <div onClick={handleOpen} className="cursor-pointer block w-full h-full relative group-video">
+                  <Image
+                    src={imageUrl}
+                    alt={title}
+                    width={500}
+                    height={300}
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                  {/* Play Button Overlay */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="p-4 bg-black/50 text-white rounded-full backdrop-blur-md">
+                      <FaPlay size={20} />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a href={link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                  <Image
+                    src={imageUrl}
+                    alt={title}
+                    width={500}
+                    height={300}
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
+      {videoUrl && (
+        <Dialog open={isOpen} toggleOpenClose={handleClose}>
+          <div className="w-auto max-w-full max-h-full flex items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
+            <video
+              src={videoUrl}
+              className="max-h-[85vh] w-auto max-w-full h-auto rounded-lg shadow-2xl"
+              autoPlay
+              controls
+              playsInline
+              crossOrigin="anonymous"
+            >
+              <track
+                kind="subtitles"
+                src="/sigapp.vtt"
+                srcLang="es"
+                label="Español"
+                default
+              />
+            </video>
+          </div>
+        </Dialog>
+      )}
+    </>
   );
 }

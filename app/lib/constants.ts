@@ -57,7 +57,7 @@ export const projectsData = [
     description:
       "Una pagina web para gestionar los pedidos de los clientes, tener un seguimiento automatizado de los mismos y poder ver el estado de cada uno. ",
     tags: ["Next.js", "Google API", "CI/CD", "Docker", "Typescript"],
-    imageUrl: animarte,
+    imageUrl: "/animarte-mockup.png",
     link: "https://animarte.website/",
     github: "https://github.com/Nahuel-Salvatierra/animarte",
   },
@@ -71,12 +71,23 @@ export const projectsData = [
     github: "",
   },
   {
-    title: "Equipo LibreAndo",
+    title: "SigApp",
     description:
-      "Esta página web fué un salto a nuevas tecnologías. Usando React aprendí a manipular estados y efectos, la web muestra el basto conocimiento de los profesionales y su calidad de atención. ",
-    tags: ["React", "CSS", "Bootstrap", "React-Router-DOM"],
-    imageUrl: libreando,
-    link: "https://libreando.ar/",
+      "Una aplicación innovadora con una interfaz moderna y fluida. Este proyecto demuestra el poder de las animaciones y el diseño interactivo.",
+    tags: ["Next.js", "Video Integration", "UX/UI", "Tailwind"],
+    videoUrl: "/sigapp.mp4",
+    imageUrl: "/sigapp-mock.png",
+    link: "https://app.sigapp.com.ar/",
+    github: "",
+  },
+  {
+    title: "Pledge for the Planet",
+    description:
+      "Una aplicación innovadora con una interfaz moderna y fluida. Este proyecto demuestra el poder de las animaciones y el diseño interactivo.",
+    tags: ["Next.js", "Video Integration", "UX/UI", "Tailwind"],
+    imageUrl: "/pledge-mockup.png",
+    videoUrl: "/pledge-for-the-planet.mp4",
+    link: "https://app.pledgefortheplanet.org/",
     github: "",
   },
 ];

@@ -23,7 +23,7 @@ export function Dialog({ open, children, toggleOpenClose }: DialogProps) {
           style={{
             zIndex: 90,
           }}
-          className="w-full h-full bg-black/50 backdrop-blur-sm absolute top-0 left-0 flex items-center justify-center p-4"
+          className="w-full h-full bg-black/50 backdrop-blur-sm fixed top-0 left-0 flex items-center justify-center p-4"
         >
           {children}
         </motion.div>
