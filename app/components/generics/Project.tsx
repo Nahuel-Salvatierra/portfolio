@@ -13,6 +13,7 @@ export interface ProjectProps {
   videoUrl?: string;
   link: string;
   github: string;
+  priority?: boolean;
 }
 
 export default function Project({
@@ -23,6 +24,7 @@ export default function Project({
   videoUrl,
   link,
   github,
+  priority = false,
 }: ProjectProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -99,6 +101,8 @@ export default function Project({
                     alt={title}
                     width={500}
                     height={300}
+                    priority={priority}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   />
                   {/* Play Button Overlay */}
@@ -115,6 +119,8 @@ export default function Project({
                     alt={title}
                     width={500}
                     height={300}
+                    priority={priority}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   />
                 </a>

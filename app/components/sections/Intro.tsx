@@ -4,12 +4,19 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Spline from "@splinetool/react-spline";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import ContactModal from "../generics/ContactModal";
+
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  loading: () => <div className="w-full h-full bg-black" />,
+  ssr: false,
+});
 
 export default function Intro() {
   const [open, setOpen] = useState(false);
+  const [splineLoaded, setSplineLoaded] = useState(false);
+
   const onHover = "hover:scale-110 transition-transform duration-300";
 
   const toggleOpenClose = () => {
@@ -21,14 +28,19 @@ export default function Intro() {
       <ContactModal open={open} toggleOpenClose={toggleOpenClose} />
       <motion.section
         id="home"
-        className="relative w-full min-h-screen bg-[#E8F4F8]  flex items-center overflow-hidden"
+        className="relative w-full min-h-screen flex items-center overflow-hidden"
         initial={{ opacity: 0, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <div className="absolute inset-0 w-full h-full z-0">
-          <Spline scene="https://prod.spline.design/hpwYuH0i1o85hG3V/scene.splinecode" />
+          <Spline onLoad={() => setSplineLoaded(true)}
+            style={{
+              opacity: splineLoaded ? 1 : 0,
+              transition: "opacity 1s ease",
+            }}
+            scene="https://prod.spline.design/hpwYuH0i1o85hG3V/scene.splinecode" />
         </div>
         <div className="relative z-10 container mx-auto px-5 sm:px-10 md:px-20 lg:px-32 xl:px-44 2xl:px-64 py-20 md:py-32 w-full pointer-events-none">
           <div className="max-w-2xl pointer-events-auto">

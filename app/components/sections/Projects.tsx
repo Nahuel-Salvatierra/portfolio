@@ -20,7 +20,7 @@ export default function Projects() {
       <div className="grid grid-cols-1 gap-4 overflow-visible">
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
-            <Project {...project} />
+            <Project {...project} priority={index === 0} />
           </React.Fragment>
         ))}
       </div>

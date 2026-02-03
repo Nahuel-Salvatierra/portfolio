@@ -48,3 +48,17 @@ A personal portfolio website built with Next.js 16 (App Router). It showcases pr
 3. **Forbidden**:
    - Do not change the existing directory structure without a compelling reason.
    - Do not remove `eslint` rules unless blocking valid work.
+
+## Performance Best Practices
+1. **Lazy Loading**:
+   - Use `next/dynamic` for heavy components (e.g., 3D scenes, complex charts).
+   - Use `ssr: false` for client-only heavy components to reduce server load and hydration mismatch.
+2. **Image Optimization**:
+   - Always provide `sizes` prop to `next/image` for responsive sizing.
+   - Use `priority={true}` for LCP (Largest Contentful Paint) images (e.g., Hero image, first list item).
+   - Prefer `StaticImageData` (imports) over string paths for images to leverage Next.js automatic sizing.
+3. **Video Optimization**:
+   - Lazy load videos where possible (e.g., inside modals or use placeholders).
+   - Use correct codecs and compression.
+4. **Code Splitting**:
+   - Keep page-specific code in `app` and shared code in `components/generics`.
