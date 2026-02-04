@@ -102,7 +102,6 @@ export default function Project({
                     width={100}
                     height={100}
                     priority={priority}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   />
                   {/* Play Button Overlay */}
@@ -120,7 +119,6 @@ export default function Project({
                     width={100}
                     height={100}
                     priority={priority}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                   />
                 </a>

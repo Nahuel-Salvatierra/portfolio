@@ -4,6 +4,7 @@ import SectionHeading from "../Section.Heading";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
   loading: () => <div className="w-full h-full bg-black" />,
@@ -11,6 +12,8 @@ const Spline = dynamic(() => import("@splinetool/react-spline"), {
 });
 
 export default function About() {
+  const [showProfile, setShowProfile] = useState(true);
+
   return (
     <motion.section
       className="px-4 pb-10 lg:px-32 xl:px-80 text-center 2xl:px-[30rem] sm:px-10 md:px-20 leading-8 sm:pb-20 scroll-mt-28 flex flex-wrap justify-center flex-col items-center"
@@ -33,11 +36,13 @@ export default function About() {
           </div>
 
           {/* Profile Image Overlay */}
-          <div className="relative z-10 w-full h-full transition-opacity duration-500 ease-in-out group-hover:opacity-0">
+          <div style={{ opacity: showProfile ? 1 : 0 }} className="relative z-10 w-full h-full transition-opacity duration-500 ease-in-out">
             <Image
               src="/portfolio/profile.png"
               alt="Nahuel Salvatierra"
               fill
+              onMouseEnter={() => setShowProfile(false)}
+              onClick={() => setShowProfile(true)}
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 300px"
               priority

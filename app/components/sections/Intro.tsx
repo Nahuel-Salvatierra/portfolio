@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import ContactModal from "../generics/ContactModal";
+import { useMediaQuery } from "@/app/hooks/useMediaQuery";
+
 
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
   loading: () => <div className="w-full h-full bg-black" />,
@@ -14,6 +16,7 @@ const Spline = dynamic(() => import("@splinetool/react-spline"), {
 });
 
 export default function Intro() {
+  const { isMobile } = useMediaQuery();
   const [open, setOpen] = useState(false);
   const [splineLoaded, setSplineLoaded] = useState(false);
 
@@ -35,12 +38,12 @@ export default function Intro() {
         viewport={{ once: true }}
       >
         <div className="absolute inset-0 w-full h-full z-0">
-          <Spline onLoad={() => setSplineLoaded(true)}
+          {!isMobile && <Spline onLoad={() => setSplineLoaded(true)}
             style={{
               opacity: splineLoaded ? 1 : 0,
               transition: "opacity 1s ease",
             }}
-            scene="https://prod.spline.design/hpwYuH0i1o85hG3V/scene.splinecode" />
+            scene="https://prod.spline.design/hpwYuH0i1o85hG3V/scene.splinecode" />}
         </div>
         <div className="relative z-10 container mx-auto px-5 sm:px-10 md:px-20 lg:px-32 xl:px-44 2xl:px-64 py-20 md:py-32 w-full pointer-events-none">
           <div className="max-w-2xl pointer-events-auto">
