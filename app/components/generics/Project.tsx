@@ -48,7 +48,7 @@ export default function Project({
 
           <div className="flex flex-col md:flex-row">
             {/* Content Section */}
-            <div className="p-6 md:w-1/2 flex flex-col justify-between z-10">
+            <div className="p-6 md:[40%] flex flex-col justify-between z-10">
               <div>
                 <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
                   {title}
@@ -99,8 +99,8 @@ export default function Project({
                   <Image
                     src={imageUrl}
                     alt={title}
-                    width={500}
-                    height={300}
+                    width={100}
+                    height={100}
                     priority={priority}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
@@ -117,8 +117,8 @@ export default function Project({
                   <Image
                     src={imageUrl}
                     alt={title}
-                    width={500}
-                    height={300}
+                    width={100}
+                    height={100}
                     priority={priority}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"

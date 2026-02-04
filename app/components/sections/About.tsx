@@ -35,7 +35,7 @@ export default function About() {
           {/* Profile Image Overlay */}
           <div className="relative z-10 w-full h-full transition-opacity duration-500 ease-in-out group-hover:opacity-0">
             <Image
-              src="/profile.png"
+              src="/portfolio/profile.png"
               alt="Nahuel Salvatierra"
               fill
               className="object-cover"
@@ -48,7 +48,7 @@ export default function About() {
         <div className="md:hidden flex justify-center mb-6">
           <div className="relative w-40 h-40 rounded-full border-[6px] border-white overflow-hidden shadow-xl">
             <Image
-              src="/profile.png"
+              src="/portfolio/profile.png"
               alt="Nahuel Salvatierra"
               fill
               className="object-cover"

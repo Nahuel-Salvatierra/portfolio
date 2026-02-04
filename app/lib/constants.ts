@@ -1,7 +1,4 @@
 import { SectionName } from "../context/useSectionInView";
-import animarte from "../images/animarte.png";
-import mockupColormeMakeup from "../images/mockup-colorme-makeup.png";
-import libreando from "../images/libreando.jpg";
 
 export const links = [
   {
@@ -57,7 +54,7 @@ export const projectsData = [
     description:
       "Una pagina web para gestionar los pedidos de los clientes, tener un seguimiento automatizado de los mismos y poder ver el estado de cada uno. ",
     tags: ["Next.js", "Google API", "CI/CD", "Docker", "Typescript"],
-    imageUrl: "/animarte-mockup.png",
+    imageUrl: "/portfolio/animarte-mockup.png",
     link: "https://animarte.website/",
     github: "https://github.com/Nahuel-Salvatierra/animarte",
   },
@@ -66,7 +63,7 @@ export const projectsData = [
     description:
       "Un portfolio profesional. En este trabajo se muestra material artístico, sin perder la oportunidad de interactuar con la persona directamente por los medios de comunicación brindados. ",
     tags: ["HTTP", "Bootstrap", "JavaScript"],
-    imageUrl: mockupColormeMakeup,
+    imageUrl: "/portfolio/mockup-colorme-makeup.png",
     link: "https://colorme.animarte.website",
     github: "",
   },
@@ -75,8 +72,8 @@ export const projectsData = [
     description:
       "Una aplicación innovadora con una interfaz moderna y fluida. Este proyecto demuestra el poder de las animaciones y el diseño interactivo.",
     tags: ["Next.js", "Video Integration", "UX/UI", "Tailwind"],
-    videoUrl: "/sigapp.mp4",
-    imageUrl: "/sigapp-mock.png",
+    videoUrl:   "/portfolio/sigapp.mp4",
+    imageUrl: "/portfolio/sigapp-mock.png",
     link: "https://app.sigapp.com.ar/",
     github: "",
   },
@@ -85,8 +82,8 @@ export const projectsData = [
     description:
       "Una aplicación innovadora con una interfaz moderna y fluida. Este proyecto demuestra el poder de las animaciones y el diseño interactivo.",
     tags: ["Next.js", "Video Integration", "UX/UI", "Tailwind"],
-    imageUrl: "/pledge-mockup.png",
-    videoUrl: "/pledge-for-the-planet.mp4",
+    imageUrl: "/portfolio/pledge-mockup.png",
+    videoUrl: "/portfolio/pledge-for-the-planet.mp4",
     link: "https://app.pledgefortheplanet.org/",
     github: "",
   },
