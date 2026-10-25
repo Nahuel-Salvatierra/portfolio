@@ -3,11 +3,14 @@ import nodemailer from "nodemailer";
 type SendEmailParams = {
   html: string;
   recipient: string;
+  subject?: string;
 };
 
+/** SMTP helper for Node hosts (not used by the static-export contact form). */
 export async function sendEmail({
   html,
   recipient,
+  subject = "Consulta desde el portfolio",
 }: SendEmailParams): Promise<void> {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -21,11 +24,11 @@ export async function sendEmail({
 
   try {
     await transporter.sendMail({
-      from: `"Animarte" <${process.env.SMTP_USER}>`,
+      from: `"Portfolio" <${process.env.SMTP_USER}>`,
       to: recipient,
-      subject: "Pedido desde Animarte",
+      subject,
       html,
-      text: "Pedido desde Animarte. Abre este correo en un cliente que soporte HTML para ver el detalle.",
+      text: "Consulta desde el portfolio. Abrí este correo en un cliente con HTML para ver el detalle.",
     });
   } catch (error) {
     console.error("Error enviando email:", error);

@@ -1,21 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, IBM_Plex_Mono, Syne } from "next/font/google";
 import "./globals.css";
-import ActiveSectionContextProvider from "./context/activeSectionProvider";
+import { AppShell } from "./components/layout/AppShell";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio de Nahuel Salvatierra",
-  description: "Portfolio de Nahuel Salvatierra",
+  title: "Nahuel Salvatierra — Full Stack Engineer",
+  description:
+    "Portfolio de Nahuel Salvatierra, ingeniero de software Full Stack. Proyectos, stack y contacto.",
 };
 
 export default function RootLayout({
@@ -24,12 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es" style={{ colorScheme: "light" }}>
       <body
-        style={{ backgroundColor: "#000000" }}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${syne.variable} ${dmSans.variable} ${ibmPlexMono.variable} antialiased`}
       >
-        <ActiveSectionContextProvider>{children}</ActiveSectionContextProvider>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

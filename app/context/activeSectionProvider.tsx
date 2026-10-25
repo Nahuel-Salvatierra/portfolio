@@ -1,7 +1,15 @@
 "use client";
 
-import { createContext, useState, useContext } from "react";
-import { SectionName } from "./useSectionInView";
+import { createContext, useState, useContext, type ReactNode } from "react";
+
+export enum SectionName {
+  Home = "home",
+  Ai = "ai",
+  Projects = "projects",
+  Cloud = "cloud",
+  Process = "process",
+  Contact = "contact",
+}
 
 interface ActiveSectionContextType {
   activeSection: SectionName;
@@ -17,7 +25,7 @@ const ActiveSectionContext = createContext<ActiveSectionContextType | null>(
 export default function ActiveSectionContextProvider({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const [activeSection, setActiveSection] = useState(SectionName.Home);
   const [timeOfLastClick, setTimeOfLastClick] = useState(0);

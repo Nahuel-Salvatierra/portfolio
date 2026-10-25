@@ -1,14 +1,18 @@
 "use client";
 
 import React from "react";
+import clsx from "clsx";
 
-interface InputFormProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+type InputFormProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-export function InputForm({ ...props }: InputFormProps) {
-	return (
-		<input
-			{...props}
-			className="w-full p-2 rounded-md border border-gray-300"
-		/>
-	);
+export function InputForm({ className, ...props }: InputFormProps) {
+  return (
+    <input
+      {...props}
+      className={clsx(
+        "w-full p-3 rounded-sm border border-[color:var(--border)] bg-[color:var(--bg-elevated)] text-[color:var(--text)] placeholder:text-[color:var(--text-muted)] focus:outline-none focus:border-[color:var(--neon)]/50",
+        className,
+      )}
+    />
+  );
 }
