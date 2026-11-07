@@ -56,14 +56,44 @@ export const AEO_FAQS: readonly AeoFaq[] = [
   },
 ];
 
+const LLMS_FAQS: readonly AeoFaq[] = [
+  {
+    id: "quien-es",
+    question: "Who is Nahuel Salvatierra?",
+    answer:
+      "Nahuel Salvatierra is a Full Stack software engineer. He designs and builds web products end to end: interfaces, APIs, data and cloud deployment.",
+  },
+  {
+    id: "que-hace",
+    question: "What does Nahuel Salvatierra do?",
+    answer:
+      "He works as a Full Stack Engineer: frontend and backend, integrations, dashboards, landing pages, CRMs and web experiences — from discovery through production delivery.",
+  },
+  {
+    id: "contacto",
+    question: "How can I contact Nahuel Salvatierra?",
+    answer: `Email ${CONTACT_EMAIL}, use the contact form on this portfolio, or reach him on LinkedIn: https://www.linkedin.com/in/nahu-dev/.`,
+  },
+  {
+    id: "proyectos",
+    question: "What kinds of projects does this portfolio show?",
+    answer: `Featured work covers ${FEATURED_PROJECT_TYPES}. Each card summarizes the problem, approach and stack.`,
+  },
+  {
+    id: "stack",
+    question: "What technologies does he use?",
+    answer: `Frequent stack highlights include ${STACK_HIGHLIGHTS}, plus CI/CD, REST/GraphQL APIs and agile practices.`,
+  },
+];
+
 const PAGES: readonly { path: string; note: string }[] = [
   {
     path: "/",
-    note: "Inicio del portfolio: presentación, IA, proyectos, cloud, proceso y contacto.",
+    note: "Home — intro, AI focus, projects, cloud, process and contact",
   },
   {
     path: "/preguntas-frecuentes",
-    note: "Respuestas directas para consultas en buscadores y modelos de lenguaje.",
+    note: "FAQ",
   },
 ];
 
@@ -78,31 +108,31 @@ export function buildLlmsTxt(): string {
   const pages = PAGES.map(
     (page) => `- [${page.note}](${aeoPageUrl(page.path)})`,
   ).join("\n");
-  const answers = AEO_FAQS.map(
+  const answers = LLMS_FAQS.map(
     (item) =>
-      `- [${item.question}](${aeoPageUrl("/preguntas-frecuentes", item.id)}): ${item.answer}`,
-  ).join("\n");
+      `### ${item.question}\n\n${item.answer}\n\nSource: ${aeoPageUrl("/preguntas-frecuentes", item.id)}`,
+  ).join("\n\n");
 
   return `# Nahuel Salvatierra — Portfolio
 
-> Portfolio personal de Nahuel Salvatierra, ingeniero de software Full Stack. Proyectos, stack, enfoque de trabajo y contacto.
+> Personal portfolio of Nahuel Salvatierra, Full Stack software engineer. Projects, stack, working approach and contact.
 
-Idioma: español. Sitio estático servido bajo \`/portfolio\`. Contacto: ${CONTACT_EMAIL}.
+The site UI is in Spanish and is served under \`/portfolio\`. Contact: ${CONTACT_EMAIL}.
 
-## Páginas
+## Pages
 
 ${pages}
 
-## Respuestas
+## Answers
 
 ${answers}
 
-## Alcance
+## Scope
 
-- Origen: ${base}
-- Este archivo: ${base}/llms.txt
-- Proyectos destacados: ${FEATURED_PROJECT_TYPES}.
-- Stack destacado: ${STACK_HIGHLIGHTS}.
+- Origin: ${base}
+- This file: ${base}/llms.txt
+- Featured projects: ${FEATURED_PROJECT_TYPES}.
+- Stack highlights: ${STACK_HIGHLIGHTS}.
 `;
 }
 
