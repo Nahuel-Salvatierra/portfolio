@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { BsLinkedin } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
@@ -48,6 +49,15 @@ export default function Contact() {
             LinkedIn
           </a>
         </div>
+
+        <p className="mt-10 font-mono-tech text-[0.65rem] uppercase tracking-[0.18em] text-[color:var(--text-muted)]">
+          <Link
+            href="/preguntas-frecuentes"
+            className="transition-colors hover:text-[color:var(--magenta)]"
+          >
+            Preguntas frecuentes
+          </Link>
+        </p>
       </div>
     </section>
   );

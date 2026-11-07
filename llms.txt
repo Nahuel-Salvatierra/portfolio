@@ -1,0 +1,7 @@
+# portfolio — llms.txt
+
+The public answer-engine file is generated at `/portfolio/llms.txt` from `app/lib/aeo.ts` (Next.js `basePath: /portfolio`). This copy stays in the repo for coding agents and is not deployed.
+
+> Personal portfolio of Nahuel Salvatierra, Full Stack Engineer. UI in Spanish (`lang=es`). Static export. Contact: salvatierra.nahuel@gmail.com.
+
+See also `/portfolio/preguntas-frecuentes` for FAQ answers with FAQPage JSON-LD.

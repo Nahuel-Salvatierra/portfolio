@@ -34,6 +34,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" style={{ colorScheme: "light" }}>
+      <head>
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms.txt"
+          title="Resumen para modelos de lenguaje"
+        />
+      </head>
       <body
         className={`${syne.variable} ${dmSans.variable} ${ibmPlexMono.variable} antialiased`}
       >

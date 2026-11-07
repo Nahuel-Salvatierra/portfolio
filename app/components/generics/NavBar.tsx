@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { links } from "../../lib/constants";
 import clsx from "clsx";
 import {
@@ -65,6 +66,14 @@ export default function NavBar() {
               </li>
             );
           })}
+          <li className="h-3/4 flex items-center justify-center relative">
+            <Link
+              href="/preguntas-frecuentes"
+              className="flex w-full items-center justify-center px-1.5 py-3 text-[color:var(--text-muted)] transition-colors duration-250 hover:text-[color:var(--magenta)] nav-link-hover-neon"
+            >
+              FAQ
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
